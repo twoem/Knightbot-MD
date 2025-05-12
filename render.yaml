@@ -1,0 +1,67 @@
+services:
+  - type: web
+    name: cling-md-whatsapp-bot
+    env: node
+    plan: free  # or 'starter' for paid
+    branch: main  # change if your repo uses a different branch
+    repo: https://github.com/yourusername/your-repo-name
+    buildCommand: npm install
+    startCommand: node index.js  # change if your entry point is different
+    autoDeploy: true
+    envVars:
+      - key: OWNER_NAME
+        value: "𓅓𝙒𝞖𝞘𝙕𓅓"
+      - key: WELCOME
+        value: "false"
+      - key: GOODBYE
+        value: "false"
+      - key: BOT_NAME
+        value: "𓅓𝙒𝞖𝞘𝙕𓅓"
+      - key: IMAGE
+        value: "https://telegra.ph/file/481296919746f56820d40.jpg"
+      - key: TZ
+        value: "Asia/Karachi"
+      - key: FLUSH
+        value: "true"
+      - key: WARN_COUNT
+        value: "3"
+      - key: READ_COMMAND
+        value: "false"
+      - key: AUTO_SAVE_STATUS
+        value: "false"
+      - key: HEROKU_API_KEY
+        value: ""  # Add this securely in Render's dashboard
+      - key: HEROKU_APP_NAME
+        value: ""  # Add this securely in Render's dashboard
+      - key: WAPRESENCE
+        value: "available"
+      - key: AUTO_READ_STATUS
+        value: "true"
+      - key: MSGS_IN_LOG
+        value: "false"
+      - key: READ_MESSAGE
+        value: "false"
+      - key: DISABLE_PM
+        value: "false"
+      - key: PREFIX
+        value: "."
+      - key: OWNER_NUMBER
+        value: "254754783683"
+      - key: SESSION_ID
+        value: ""
+      - key: OPENAI_API_KEY
+        value: ""
+      - key: ELEVENLAB_API_KEY
+        value: ""
+      - key: REMOVE_BG_KEY
+        value: ""
+      - key: MODE
+        value: "private"
+      - key: PACK_NAME
+        value: "Cling Md"
+      - key: PACK_AUTHER
+        value: ""
+
+# Optional: Add ffmpeg support (some features might need it)
+# Render does not natively support FFmpeg install like Heroku,
+# so you may need to include FFmpeg binaries in your repo or add a script to fetch and set PATH.
